@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1.5fr 5fr;
+  grid-template-areas: "logo boton";
+  align-items: center;
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 9dvh;
+}
+
+.logo {
+  font-weight: bold;
+  grid-area: logo;
+  width: 100%;
+  position: relative;
+  align-self: stretch;
+  text-align: center;
+}
+
+.logo img {
+  width: 45%;
+  top: 10%;
+  align-self: center;
+  position: relative;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  grid-area: boton;
+  left: 90%;
+  position: relative;
+}
+
+.menu-desplegable {
+  list-style: none;
+  background: #333;
+  padding: 1rem;
+  position: fixed;
+  top: 60px;
+  right: 3px;
+  transform: translateX(120%);
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.menu-desplegable.show {
+  transform: translateX(0);
+
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.banner {
+  text-align: center;
+  height: 40dvh;
+  background: url('../recursos/Fondo_banner.png') no-repeat center/cover;
+  padding: 9dvh;
+  font-family: "Jockey One", serif;
+
+}
+
+.banner h1 {
+  font-size: 2.4rem;
+}
+
+.banner p {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.catalogo {
+  padding: 1rem;
+}
+
+.catalogo h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+#buscador {
+  width: 80%;
+  height: 2rem;
+}
+
+#buscar-btn {
+  width: 14%;
+  height: 2rem;
+  background: white;
+  font-family: 'Jockey One';
+  transition: 0.2s ease-in-out;
+}
+
+#buscar-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.card {
+  background: #222;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.card button {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Jockey One';
+}
+
+.details-btn {
+  position: relative;
+  top: 3px;
+}
+
+.card button:hover {
+  background: #444;
+  color: #fff;
+}
+
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .nav ul {
+    position: relative;
+    flex-direction: row;
+    background: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 42%;
+  }
+  .logo img{
+    width: 29%;
+  }
+
+  .nav button {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header{
+    height: 13dvh;
+  }
+  .banner{
+    height: 55dvh;
+    padding: 18dvh;
+  }
+  .banner h1 {
+    font-size: 3.4rem;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1300px){
+  .logo img{
+    width: 22%;
+  }
+  .nav ul{
+    width: 45%;
+    font-size: 1.2rem;
+    gap: 4rem;
+  }
+}
